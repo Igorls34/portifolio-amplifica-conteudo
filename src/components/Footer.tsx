@@ -39,7 +39,7 @@ const Footer = () => {
             <h4>Horário</h4>
             <ul>
               <li>Seg. a Sex.</li>
-              <li>09h às 18h</li>
+              <li>10h às 22h</li>
             </ul>
           </div>
         </div>
