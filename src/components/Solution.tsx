@@ -1,4 +1,5 @@
 import '../styles/Solution.css'
+import pedroImg from '../assets/hero.png'
 
 const Solution = () => {
   return (
@@ -6,7 +7,7 @@ const Solution = () => {
       <div className="container">
         <div className="solution-grid">
           <div className="solution-image reveal-scale">
-            {/* Placeholder for Pedro and team photo */}
+            <img src={pedroImg} alt="Pedro Lucas - CEO da Amplifica Conteúdo" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
           </div>
           <div className="solution-content">
             <h2 className="reveal">Não somos apenas uma agência. Somos seus <span className="neon-text">parceiros de crescimento.</span></h2>

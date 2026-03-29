@@ -17,7 +17,11 @@ const Footer = () => {
                   WhatsApp: +351 925 811 424
                 </a>
               </li>
-              <li>E-mail: contato@amplificaconteudo.com.br</li>
+              <li>
+                <a href="mailto:amplificaconteudo.amp@gmail.com">
+                  E-mail: amplificaconteudo.amp@gmail.com
+                </a>
+              </li>
               <li>
                 <a href="https://www.instagram.com/amplificaconteudo.ofc/" target="_blank" rel="noreferrer">
                   Instagram: @amplificaconteudo.ofc
