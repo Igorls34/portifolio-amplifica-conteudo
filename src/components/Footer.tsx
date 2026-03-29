@@ -28,6 +28,11 @@ const Footer = () => {
                   CEO: @pedrolucas.mateus99
                 </a>
               </li>
+              <li>
+                <a href="https://www.behance.net/ppgamesgames" target="_blank" rel="noreferrer">
+                  Portfólio: Behance
+                </a>
+              </li>
             </ul>
           </div>
           <div className="footer-links">
