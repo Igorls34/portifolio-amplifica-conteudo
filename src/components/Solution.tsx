@@ -1,5 +1,5 @@
 import '../styles/Solution.css'
-import pedroImg from '../assets/hero.png'
+import pedroImg from '../imagens/foto-pedro.jpeg'
 
 const Solution = () => {
   return (
