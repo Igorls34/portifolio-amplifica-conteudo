@@ -1,0 +1,127 @@
+:root {
+  --bg-color: #ffffff;
+  --text-color: #001A33;
+  --primary-neon: #007BFF;
+  --secondary-neon: #0056b3;
+  --accent-color: #00D4FF;
+  --card-bg: #f8faff;
+  --glass-bg: rgba(255, 255, 255, 0.85);
+  --font-main: 'Montserrat', sans-serif;
+  --transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Scroll Animation Classes */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: var(--transition);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: var(--transition);
+}
+
+.reveal-left.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: var(--transition);
+}
+
+.reveal-scale.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+.delay-4 { transition-delay: 0.4s; }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-main);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  text-transform: uppercase;
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--text-color);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-family: var(--font-main);
+  transition: var(--transition);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+section {
+  padding: 100px 0;
+}
+
+.neon-text {
+  color: var(--primary-neon);
+  text-shadow: none; /* Removed glow for light mode clarity */
+}
+
+.neon-btn {
+  background: var(--primary-neon);
+  color: #fff;
+  font-weight: 700;
+  padding: 1rem 2.5rem;
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: 1px;
+}
+
+.neon-btn:hover {
+  background: var(--secondary-neon);
+  box-shadow: 0 10px 20px rgba(0, 123, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 60px 0;
+  }
+}
