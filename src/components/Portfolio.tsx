@@ -92,7 +92,7 @@ const portfolioItems: PortfolioItem[] = [
     id: '14',
     image: 'WhatsApp Image 2026-04-03 at 14.301.10.jpeg',
     title: 'Motion Graphics',
-    category: 'Animação'
+    category: 'Motion Design'
   },
   {
     id: '15',

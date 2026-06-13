@@ -24,9 +24,9 @@ const depoimentos: DepoimentoItem[] = [
     nome: 'Henrique Faria',
     cargo: 'Segurança Privada',
     texto: 'Depois que a Amplifica assumiu nossas redes sociais, tudo mudou. O conteúdo que eles produzem é de altíssima qualidade e realmente conecta com nosso público. Pedro é um gênio do marketing digital!',
-    tipo: 'video',
+    tipo: 'audio',
     media: '/depoimento-video.mp4',
-    mediaType: 'video/mp4'
+    mediaType: 'audio/mp4'
   }
 ]
 

@@ -1,5 +1,4 @@
 import '../styles/Hero.css'
-import heroImage from '../assets/hero.png'
 
 const Hero = () => {
   return (
@@ -50,8 +49,26 @@ const Hero = () => {
             </div>
             <span className="hero-slogan reveal delay-4">Seu conteúdo também pode ser amplificado.</span>
           </div>
+
           <div className="hero-visual reveal delay-2">
-            <img src={heroImage} alt="Amplifica Conteúdo" className="hero-image" />
+            <div className="hv-orb hv-orb-1"></div>
+            <div className="hv-orb hv-orb-2"></div>
+            <div className="hv-orb hv-orb-3"></div>
+            <div className="hv-card">
+              <div className="hv-icon">
+                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M3 11v2a2 2 0 0 0 2 2h2l3 4V5l-3 4H5a2 2 0 0 0-2 2z"/>
+                  <path d="M16 9.5a3.5 3.5 0 0 1 0 5"/>
+                  <path d="M19 6.5a7 7 0 0 1 0 11"/>
+                  <path d="M8 21h8"/>
+                  <path d="M12 17v4"/>
+                </svg>
+              </div>
+              <div className="hv-pulse"></div>
+            </div>
+            <div className="hv-dots"></div>
+            <div className="hv-ring hv-ring-1"></div>
+            <div className="hv-ring hv-ring-2"></div>
           </div>
         </div>
       </div>
