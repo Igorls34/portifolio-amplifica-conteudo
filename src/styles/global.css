@@ -1,19 +1,69 @@
 :root {
+  /* Neutros Premium - Branco Sólido e Preto */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8f9fa;
+  --bg-tertiary: #f0f2f5;
+  --text-primary: #1a1a1a;
+  --text-secondary: #666666;
+  --text-light: #999999;
+  --border-color: #e0e0e0;
+  
+  /* Cores Brand - AZUL Premium */
+  --primary: #0052cc;
+  --primary-dark: #003d99;
+  --primary-light: #4d94ff;
+  --secondary: #0066ff;
+  --accent: #0052cc;
+  
+  /* Legacy (para compatibilidade) */
+  --primary-neon: #0052cc;
+  --secondary-neon: #003d99;
+  --accent-color: #0052cc;
   --bg-color: #ffffff;
-  --text-color: #001A33;
-  --primary-neon: #007BFF;
-  --secondary-neon: #0056b3;
-  --accent-color: #00D4FF;
-  --card-bg: #f8faff;
-  --glass-bg: rgba(255, 255, 255, 0.85);
+  --text-color: #1a1a1a;
+  --card-bg: #f8f9fa;
+  
+  /* Glass */
+  --glass-bg: rgba(255, 255, 255, 0.9);
+  --glass-border: rgba(255, 255, 255, 0.3);
+  
+  /* Tipografia */
   --font-main: 'Montserrat', sans-serif;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 2rem;
+  
+  /* Spacing (8px base) */
+  --space-2: 0.5rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  
+  /* Shadows - Premium Elevation */
+  --shadow-xs: 0 1px 3px rgba(0, 0, 0, 0.06);
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+  --shadow-xl: 0 12px 32px rgba(0, 0, 0, 0.14);
+  
+  /* Transitions */
   --transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 /* Scroll Animation Classes */
 .reveal {
   opacity: 0;
-  transform: translateY(30px);
+  transform: translateY(20px);
   transition: var(--transition);
 }
 
@@ -24,7 +74,7 @@
 
 .reveal-left {
   opacity: 0;
-  transform: translateX(-30px);
+  transform: translateX(-20px);
   transition: var(--transition);
 }
 
@@ -35,7 +85,7 @@
 
 .reveal-scale {
   opacity: 0;
-  transform: scale(0.9);
+  transform: scale(0.95);
   transition: var(--transition);
 }
 
@@ -48,6 +98,7 @@
 .delay-2 { transition-delay: 0.2s; }
 .delay-3 { transition-delay: 0.3s; }
 .delay-4 { transition-delay: 0.4s; }
+.delay-5 { transition-delay: 0.5s; }
 
 * {
   margin: 0;
@@ -56,19 +107,32 @@
   scroll-behavior: smooth;
 }
 
+html {
+  scroll-padding-top: 80px;
+}
+
 body {
-  background-color: var(--bg-color);
-  color: var(--text-color);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
   font-family: var(--font-main);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.1;
+  color: var(--text-primary);
 }
 
 h1, h2, h3 {
-  text-transform: uppercase;
   font-weight: 800;
-  line-height: 1.1;
-  color: var(--text-color);
+  letter-spacing: -0.02em;
+}
+
+h4, h5, h6 {
+  font-weight: 700;
 }
 
 a {
@@ -85,7 +149,7 @@ button {
   border: none;
   outline: none;
   font-family: var(--font-main);
-  transition: var(--transition);
+  transition: var(--transition-fast);
 }
 
 .container {
@@ -95,33 +159,247 @@ button {
 }
 
 section {
-  padding: 100px 0;
+  padding: 120px 0;
 }
 
+/* Typography utilities */
+.text-primary { color: var(--text-primary); }
+.text-secondary { color: var(--text-secondary); }
+.text-light { color: var(--text-light); }
+
+/* Primary colored text */
 .neon-text {
-  color: var(--primary-neon);
-  text-shadow: none; /* Removed glow for light mode clarity */
+  color: var(--primary);
+  font-weight: 700;
+}
+
+/* Buttons - Premium System */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: 0.875rem 1.75rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: var(--font-size-sm);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: var(--transition-fast);
+  white-space: nowrap;
+  border: 1px solid transparent;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: white;
+  box-shadow: var(--shadow-md);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--primary);
+  border: 1.5px solid var(--primary);
+}
+
+.btn-secondary:hover {
+  background-color: var(--primary);
+  color: white;
+  box-shadow: var(--shadow-md);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--text-primary);
+  border: 1.5px solid var(--border-color);
+}
+
+.btn-outline:hover {
+  border-color: var(--primary);
+  color: var(--primary);
 }
 
 .neon-btn {
-  background: var(--primary-neon);
+  background: var(--primary);
   color: #fff;
   font-weight: 700;
   padding: 1rem 2.5rem;
-  border-radius: 4px;
+  border-radius: 8px;
   text-transform: uppercase;
   font-size: 1rem;
   letter-spacing: 1px;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-fast);
 }
 
 .neon-btn:hover {
-  background: var(--secondary-neon);
-  box-shadow: 0 10px 20px rgba(0, 123, 255, 0.2);
+  background: var(--primary-dark);
+  box-shadow: var(--shadow-lg);
   transform: translateY(-2px);
+}
+
+.neon-btn:active {
+  transform: translateY(0);
+}
+
+/* Badges */
+.badge {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.badge-primary {
+  background-color: rgba(99, 102, 241, 0.1);
+  color: var(--primary);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+}
+
+.badge-secondary {
+  background-color: rgba(236, 72, 153, 0.1);
+  color: var(--secondary);
+  border: 1px solid rgba(236, 72, 153, 0.2);
+}
+
+/* Cards */
+.card {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: var(--space-8);
+  transition: var(--transition-fast);
+  box-shadow: var(--shadow-xs);
+}
+
+.card:hover {
+  border-color: var(--primary);
+  box-shadow: var(--shadow-md);
+}
+
+/* Dividers */
+.divider {
+  height: 1px;
+  background-color: var(--border-color);
+  margin: var(--space-8) 0;
+}
+
+/* Utilities */
+.highlight {
+  position: relative;
+  display: inline-block;
+}
+
+.highlight::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
+  border-radius: 2px;
+}
+
+/* Section with subtle background */
+.section-accent {
+  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+}
+
+/* Premium link style */
+a.link-premium {
+  position: relative;
+  color: var(--primary);
+  font-weight: 600;
+  transition: color var(--transition-fast);
+}
+
+a.link-premium::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  transition: width var(--transition-fast);
+}
+
+a.link-premium:hover::after {
+  width: 100%;
+}
+
+/* Focus states for accessibility */
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
 }
 
 @media (max-width: 768px) {
   section {
+    padding: 80px 0;
+  }
+  
+  .container {
+    padding: 0 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --space-8: 1.5rem;
+    --space-12: 2.5rem;
+    --space-16: 3rem;
+    --space-20: 4rem;
+    --space-24: 5rem;
+  }
+  
+  section {
     padding: 60px 0;
+  }
+  
+  .container {
+    padding: 0 1rem;
+  }
+  
+  h1 {
+    font-size: clamp(1.75rem, 7vw, 2.5rem) !important;
+  }
+  
+  h2 {
+    font-size: clamp(1.5rem, 5vw, 2.2rem) !important;
+  }
+  
+  h3 {
+    font-size: clamp(1.1rem, 4vw, 1.5rem) !important;
+  }
+  
+  p {
+    font-size: clamp(0.9rem, 2vw, 1.05rem) !important;
+  }
+  
+  .btn,
+  .btn-primary,
+  .btn-secondary,
+  .neon-btn,
+  button {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 0.75rem 1.5rem !important;
   }
 }

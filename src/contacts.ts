@@ -1,0 +1,6 @@
+export const WHATSAPP_LINK = 'https://wa.me/351925811424'
+export const BEHANCE_LINK = 'https://www.behance.net/ppgamesgames'
+export const INSTAGRAM_COMPANY = 'https://www.instagram.com/amplificaconteudo.ofc/'
+export const INSTAGRAM_CEO = 'https://www.instagram.com/pedrolucas.mateus99/'
+export const EMAIL = 'amplificaconteudo.amp@gmail.com'
+export const PHONE_FORMATTED = '+351 925 811 424'

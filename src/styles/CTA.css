@@ -1,43 +1,128 @@
 .cta-section {
-  background: linear-gradient(135deg, #ffffff, #f0f7ff);
+  background: linear-gradient(135deg, rgba(0, 82, 204, 0.12) 0%, rgba(77, 148, 255, 0.06) 100%);
   text-align: center;
   position: relative;
   overflow: hidden;
-  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  border-top: 1px solid var(--border-color);
 }
 
 .cta-section::before {
   content: "";
   position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(0, 123, 255, 0.03), transparent 70%);
-  transform: translate(-50%, -50%);
-  z-index: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(0, 82, 204, 0.12) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(77, 148, 255, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.cta-section::after {
+  content: '';
+  position: absolute;
+  bottom: -30%;
+  left: -5%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(0, 82, 204, 0.12) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
 }
 
 .cta-content {
   position: relative;
   z-index: 1;
+  padding: var(--space-20) var(--space-8);
 }
 
 .cta-section h2 {
-  font-size: clamp(2.5rem, 8vw, 5rem);
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
   margin-bottom: 1.5rem;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
 }
 
 .cta-section p {
-  font-size: 1.25rem;
-  opacity: 0.9;
+  font-size: 1.2rem;
+  color: var(--text-secondary);
   margin-bottom: 3rem;
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
+  line-height: 1.8;
+  font-weight: 500;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .cta-btn-large {
-  font-size: 1.2rem;
-  padding: 1.5rem 4rem;
+  font-size: 1.1rem;
+  padding: 1.25rem 3.5rem;
+}
+
+@media (max-width: 768px) {
+  .cta-content {
+    padding: var(--space-16) var(--space-4);
+  }
+  
+  .cta-section h2 {
+    margin-bottom: 1rem;
+  }
+  
+  .cta-section p {
+    font-size: 1.05rem;
+    margin-bottom: 2.5rem;
+  }
+  
+  .cta-buttons {
+    gap: 1rem;
+  }
+  
+  .cta-btn-large {
+    font-size: 1rem;
+    padding: 1rem 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .cta-section::after {
+    width: 300px;
+    height: 300px;
+  }
+  
+  .cta-content {
+    padding: var(--space-12) var(--space-2);
+  }
+  
+  .cta-section h2 {
+    font-size: clamp(1.75rem, 6vw, 2.5rem);
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+  }
+  
+  .cta-section p {
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .cta-btn-large {
+    width: 100%;
+    font-size: 0.95rem;
+    padding: 0.9rem 2rem;
+  }
 }

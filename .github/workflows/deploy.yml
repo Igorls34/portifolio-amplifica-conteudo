@@ -1,0 +1,112 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    name: 🔨 Build & Validate
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist/
+          retention-days: 7
+
+  deploy:
+    name: 🚀 Deploy to Netlify
+    needs: build
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Download build artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist/
+
+      - name: Deploy to Netlify
+        id: netlify
+        uses: nwtgck/actions-netlify@v3
+        with:
+          publish-dir: './dist'
+          production-branch: main
+          production-deploy: true
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          deploy-message: "Deploy ${{ github.sha }}"
+          enable-commit-comment: true
+          enable-commit-status: true
+          enable-pull-request-comment: false
+          overwrites-pull-request-comment: false
+          fails-without-credentials: false
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: d94d487f-f891-4e6f-86a3-fd0b908b936d
+        timeout-minutes: 5
+
+      - name: Deploy result
+        if: always()
+        run: |
+          if [ "${{ steps.netlify.outcome }}" = "success" ]; then
+            echo "✅ Deploy concluído com sucesso!"
+            echo "🔗 URL: ${{ steps.netlify.outputs.deploy-url }}"
+          elif [ "${{ steps.netlify.outcome }}" = "skipped" ]; then
+            echo "⚠️ Deploy via GitHub Actions pulado (NETLIFY_AUTH_TOKEN não configurado)."
+            echo "📦 O deploy automático do Netlify via git push ainda está ativo."
+          else
+            echo "❌ Deploy falhou! Verifique os logs acima."
+          fi
+
+  notify:
+    name: 📢 Resumo
+    needs: [build, deploy]
+    if: always() && github.ref == 'refs/heads/main' && github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Summary
+        run: |
+          echo "## 🚀 CI/CD Pipeline - Resumo" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Job | Status |" >> $GITHUB_STEP_SUMMARY
+          echo "|-----|--------|" >> $GITHUB_STEP_SUMMARY
+          
+          if [ "${{ needs.build.result }}" = "success" ]; then
+            echo "| 🔨 Build | ✅ Sucesso |" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "| 🔨 Build | ❌ Falhou |" >> $GITHUB_STEP_SUMMARY
+          fi
+          
+          if [ "${{ needs.deploy.result }}" = "success" ]; then
+            echo "| 🚀 Deploy Netlify | ✅ Sucesso |" >> $GITHUB_STEP_SUMMARY
+          elif [ "${{ needs.deploy.result }}" = "skipped" ]; then
+            echo "| 🚀 Deploy Netlify | ⚠️ Pulado |" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "| 🚀 Deploy Netlify | ❌ Falhou |" >> $GITHUB_STEP_SUMMARY
+          fi
+          
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "🔗 **Site**: https://amplifica-conteudo.netlify.app" >> $GITHUB_STEP_SUMMARY
+          echo "📊 **Netlify Dashboard**: https://app.netlify.com/sites/amplifica-conteudo/deploys" >> $GITHUB_STEP_SUMMARY

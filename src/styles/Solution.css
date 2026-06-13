@@ -1,22 +1,114 @@
 .solution {
-  background-color: var(--bg-color);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(0, 82, 204, 0.04) 100%);
   position: relative;
+  padding: 160px 0;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.solution::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -50px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(0, 82, 204, 0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.solution::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: -100px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(77, 148, 255, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
 }
 
 .solution-content {
-  max-width: 800px;
+  max-width: 950px;
   margin: 0 auto;
   text-align: center;
+  position: relative;
+  z-index: 1;
 }
 
 .solution-content h2 {
-  font-size: clamp(2rem, 5vw, 3rem);
-  margin-bottom: 2rem;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  margin-bottom: 3rem;
+  font-weight: 900;
+  letter-spacing: -0.02em;
 }
 
 .solution-content p {
   font-size: 1.15rem;
-  line-height: 1.8;
-  opacity: 0.8;
+  line-height: 1.9;
+  color: var(--text-secondary);
   margin-bottom: 2.5rem;
+  font-weight: 500;
+}
+
+.solution-content p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .solution {
+    padding: 100px 0;
+  }
+  
+  .solution::before {
+    width: 250px;
+    height: 250px;
+  }
+  
+  .solution::after {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .solution-content h2 {
+    margin-bottom: 2rem;
+  }
+  
+  .solution-content p {
+    font-size: 1.05rem;
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .solution {
+    padding: 60px 0;
+  }
+  
+  .solution::before {
+    width: 150px;
+    height: 150px;
+    top: -50px;
+  }
+  
+  .solution::after {
+    width: 120px;
+    height: 120px;
+    bottom: 0;
+  }
+  
+  .solution-content h2 {
+    font-size: clamp(1.5rem, 4vw, 2.2rem);
+    margin-bottom: 1.5rem;
+  }
+  
+  .solution-content p {
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+  }
 }

@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "git add . && git commit -m \"feat: Remove portfolio descriptions and enhance aesthetic colors\" && git push origin main"
   },
   "dependencies": {
     "react": "^19.2.4",

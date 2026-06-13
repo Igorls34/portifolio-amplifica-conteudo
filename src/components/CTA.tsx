@@ -10,12 +10,14 @@ const CTA = () => {
             Você está a um clique de transformar sua marca na referência que você sempre quis. 
             O próximo nível do seu conteúdo começa agora.
           </p>
-          <button 
-            className="neon-btn cta-btn-large"
-            onClick={() => window.open('https://wa.me/351925811424', '_blank')}
-          >
-            Melhore seu conteúdo AQUI
-          </button>
+          <div className="cta-buttons">
+            <button 
+              className="neon-btn cta-btn-large"
+              onClick={() => window.open('https://wa.me/351925811424', '_blank')}
+            >
+              Melhore seu conteúdo AQUI
+            </button>
+          </div>
         </div>
       </div>
     </section>

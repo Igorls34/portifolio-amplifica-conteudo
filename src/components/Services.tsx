@@ -4,22 +4,46 @@ const services = [
   {
     title: 'Gestão de Conteúdo',
     description: 'Esqueça a preocupação de "o que postar amanhã". Nós cuidamos de todo o ecossistema da sua marca.',
-    icon: '📱'
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <rect x="3" y="3" width="18" height="18" rx="2"/>
+        <path d="M9 11h6M9 15h6"/>
+      </svg>
+    )
   },
   {
     title: 'Produção de Vídeo/Foto',
     description: 'Conteúdo visual de elite que faz o seu cliente parar o scroll e desejar o seu produto.',
-    icon: '🎥'
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <polygon points="23 7 16 12 23 17 23 7"/>
+        <rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
+      </svg>
+    )
   },
   {
     title: 'Estratégia Digital',
     description: 'O mapa do tesouro. Planejamos cada passo para que sua marca ocupe o lugar que merece.',
-    icon: '🎯'
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <circle cx="12" cy="12" r="1"/>
+        <circle cx="12" cy="5" r="1"/>
+        <circle cx="12" cy="19" r="1"/>
+        <path d="M12 6v6M12 13v6"/>
+      </svg>
+    )
   },
   {
     title: 'Identidade Visual',
     description: 'Design que comunica profissionalismo e desejo imediato. A primeira impressão que vende.',
-    icon: '🎨'
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <circle cx="13.5" cy="6.5" r="1.5"/>
+        <circle cx="17.5" cy="10.5" r="1.5"/>
+        <circle cx="8.5" cy="7.5" r="1.5"/>
+        <path d="M12 17s-4-3-5-5m5 5s4-3 5-5"/>
+      </svg>
+    )
   }
 ]
 
@@ -29,6 +53,7 @@ const Services = () => {
       <div className="container">
         <div className="services-header">
           <h2 className="reveal">Os 4 Pilares da <span className="neon-text">Amplificação</span></h2>
+          <p className="reveal delay-1">Soluções integradas que transformam sua marca em referência</p>
         </div>
         <div className="services-grid">
           {services.map((service, index) => (
