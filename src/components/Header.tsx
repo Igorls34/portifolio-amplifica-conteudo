@@ -55,7 +55,7 @@ const Header = () => {
   }, [isMenuOpen])
 
   // Ripple effect nos botões
-  const handleRipple = (e: React.MouseEvent<HTMLButtonElement>) => {
+  const handleRipple = (e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => {
     const button = e.currentTarget
     const rect = button.getBoundingClientRect()
     const x = e.clientX - rect.left
@@ -81,8 +81,8 @@ const Header = () => {
         
         {/* Navigation - Desktop */}
         <nav className="nav-links">
-          <a href="#problem">O Problema</a>
-          <a href="#solution">A Solução</a>
+          <a href="#problem">Problema</a>
+          <a href="#solution">Solução</a>
           <a href="#services">Serviços</a>
           <a href="#portfolio">Portfólio</a>
           <a href="#differentials">Diferenciais</a>
@@ -116,14 +116,14 @@ const Header = () => {
             onClick={handleNavClick}
             className="nav-link"
           >
-            <span>O Problema</span>
+            <span>Problema</span>
           </a>
           <a 
             href="#solution" 
             onClick={handleNavClick}
             className="nav-link"
           >
-            <span>A Solução</span>
+            <span>Solução</span>
           </a>
           <a 
             href="#services" 
@@ -153,26 +153,28 @@ const Header = () => {
           >
             <span>Depoimentos</span>
           </a>
-          <button 
+          <a 
             className="mobile-cta"
-            onClick={() => {
-              window.open('https://wa.me/351925811424', '_blank')
-              setIsMenuOpen(false)
-            }}
+            href="https://wa.me/351925811424"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setIsMenuOpen(false)}
             onMouseDown={handleRipple}
           >
-            Falar com um especialista
-          </button>
+            Fale Conosco
+          </a>
         </nav>
 
         {/* CTA Button - Desktop */}
-        <button 
+        <a 
           className="header-cta" 
-          onClick={() => window.open('https://wa.me/351925811424', '_blank')}
+          href="https://wa.me/351925811424"
+          target="_blank"
+          rel="noopener noreferrer"
           onMouseDown={handleRipple}
         >
-          Falar com um especialista
-        </button>
+          Fale Conosco
+        </a>
       </div>
     </header>
   )

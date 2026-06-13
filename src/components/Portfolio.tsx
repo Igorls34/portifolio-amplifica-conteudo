@@ -153,8 +153,8 @@ const Portfolio = () => {
     ? portfolioItems 
     : portfolioItems.filter(item => item.category === selectedCategory)
 
-  const displayedItems = showAll ? filteredItems : filteredItems.slice(0, 3)
-  const hasMore = filteredItems.length > 3
+  const displayedItems = showAll ? filteredItems : filteredItems.slice(0, 6)
+  const hasMore = filteredItems.length > 6
 
   return (
     <section id="portfolio" className="portfolio">

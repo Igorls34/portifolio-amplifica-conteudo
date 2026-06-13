@@ -11,12 +11,14 @@ const CTA = () => {
             O próximo nível do seu conteúdo começa agora.
           </p>
           <div className="cta-buttons">
-            <button 
+            <a 
               className="neon-btn cta-btn-large"
-              onClick={() => window.open('https://wa.me/351925811424', '_blank')}
+              href="https://wa.me/351925811424"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               Melhore seu conteúdo AQUI
-            </button>
+            </a>
           </div>
         </div>
       </div>

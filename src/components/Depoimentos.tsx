@@ -3,7 +3,7 @@ import '../styles/Depoimentos.css'
 interface DepoimentoItem {
   nome: string
   cargo: string
-  foto: string
+  foto?: string
   texto: string
   tipo: 'audio' | 'video'
   media: string
@@ -12,19 +12,18 @@ interface DepoimentoItem {
 
 const depoimentos: DepoimentoItem[] = [
   {
-    nome: 'Maria Silva',
-    cargo: 'CEO, Loja Encanto',
+    nome: 'Anderson Lopes',
+    cargo: 'Diretor Executivo, Pint Service VR',
     foto: '/depoimento-cliente.jpeg',
-    texto: 'A Amplifica transformou completamente a presença digital da minha loja. Em apenas 3 meses, nossas vendas pelo Instagram triplicaram. O Pedro e a equipe são extremamente profissionais e antenados com as tendências. Recomendo de olhos fechados!',
+    texto: 'A Amplifica transformou completamente a presença digital da minha empresa. Em apenas 3 meses, nossos resultados dispararam. O Pedro e a equipe são extremamente profissionais e antenados com as tendências. Recomendo de olhos fechados!',
     tipo: 'audio',
     media: '/depoimento-audio.ogg',
     mediaType: 'audio/ogg'
   },
   {
-    nome: 'João Santos',
-    cargo: 'Proprietário, Restaurante Sabor & Arte',
-    foto: '/depoimento-cliente.jpeg',
-    texto: 'Depois que a Amplifica assumiu nossas redes sociais, o movimento do restaurante aumentou mais de 40%. O conteúdo que eles produzem é de altíssima qualidade e realmente conecta com nosso público. Pedro é um gênio do marketing digital!',
+    nome: 'Henrique Faria',
+    cargo: 'Segurança Privada',
+    texto: 'Depois que a Amplifica assumiu nossas redes sociais, tudo mudou. O conteúdo que eles produzem é de altíssima qualidade e realmente conecta com nosso público. Pedro é um gênio do marketing digital!',
     tipo: 'video',
     media: '/depoimento-video.mp4',
     mediaType: 'video/mp4'
@@ -60,16 +59,24 @@ const Depoimentos = () => {
             <div key={index} className={`depoimento-card reveal delay-${Math.min(index + 1, 2)}`}>
               <div className="depoimento-top">
                 <div className="depoimento-foto-wrapper">
-                  <img
-                    src={depoimento.foto}
-                    alt={`Foto de ${depoimento.nome}`}
-                    className="depoimento-foto"
-                  />
-                  <div className="depoimento-aspas">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M10 11h-4c-.6 0-1-.4-1-1v-4c0-.6.4-1 1-1h4v6h-2v4h2v-4zm8 0h-4c-.6 0-1-.4-1-1v-4c0-.6.4-1 1-1h4v6h-2v4h2v-4z"/>
-                    </svg>
-                  </div>
+                  {depoimento.foto ? (
+                    <>
+                      <img
+                        src={depoimento.foto}
+                        alt={`Foto de ${depoimento.nome}`}
+                        className="depoimento-foto"
+                      />
+                      <div className="depoimento-aspas">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M10 11h-4c-.6 0-1-.4-1-1v-4c0-.6.4-1 1-1h4v6h-2v4h2v-4zm8 0h-4c-.6 0-1-.4-1-1v-4c0-.6.4-1 1-1h4v6h-2v4h2v-4z"/>
+                        </svg>
+                      </div>
+                    </>
+                  ) : (
+                    <div className="depoimento-foto depoimento-foto-placeholder">
+                      <span>{depoimento.nome.split(' ').map(n => n[0]).slice(0, 2).join('')}</span>
+                    </div>
+                  )}
                 </div>
                 <div className="depoimento-stars">
                   {[...Array(5)].map((_, i) => (

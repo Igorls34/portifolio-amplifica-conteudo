@@ -1,4 +1,6 @@
 import '../styles/Hero.css'
+import heroImage from '../assets/hero.png'
+
 const Hero = () => {
   return (
     <section className="hero">
@@ -14,12 +16,14 @@ const Hero = () => {
               Posicionamento estratégico para quem cansou de postar e não vender.
             </p>
             <div className="reveal delay-2">
-              <button 
+              <a 
                 className="neon-btn"
-                onClick={() => window.open('https://wa.me/351925811424', '_blank')}
+                href="https://wa.me/351925811424"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 Quero amplificar meu negócio
-              </button>
+              </a>
             </div>
             <div className="hero-trust reveal delay-3">
               <div className="trust-item">
@@ -46,7 +50,9 @@ const Hero = () => {
             </div>
             <span className="hero-slogan reveal delay-4">Seu conteúdo também pode ser amplificado.</span>
           </div>
-          <div className="hero-visual reveal delay-2"></div>
+          <div className="hero-visual reveal delay-2">
+            <img src={heroImage} alt="Amplifica Conteúdo" className="hero-image" />
+          </div>
         </div>
       </div>
     </section>

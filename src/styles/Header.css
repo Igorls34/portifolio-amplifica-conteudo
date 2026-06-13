@@ -259,6 +259,25 @@
   box-shadow: var(--shadow-sm);
 }
 
+@media (max-width: 900px) {
+  .nav-links {
+    gap: 1.5rem;
+  }
+
+  .nav-links a {
+    font-size: 0.8rem;
+  }
+
+  .logo {
+    font-size: 1.1rem;
+  }
+
+  .header-cta {
+    padding: 0.65rem 1.2rem;
+    font-size: 0.8rem;
+  }
+}
+
 @media (max-width: 768px) {
   .header {
     padding: 1rem 0;
