@@ -1,14 +1,50 @@
 import '../styles/Depoimentos.css'
 
-const depoimentos = [
+interface DepoimentoItem {
+  nome: string
+  cargo: string
+  foto: string
+  texto: string
+  tipo: 'audio' | 'video'
+  media: string
+  mediaType: string
+}
+
+const depoimentos: DepoimentoItem[] = [
   {
     nome: 'Maria Silva',
     cargo: 'CEO, Loja Encanto',
     foto: '/depoimento-cliente.jpeg',
-    audio: '/depoimento-audio.ogg',
-    texto: 'A Amplifica transformou completamente a presença digital da minha loja. Em apenas 3 meses, nossas vendas pelo Instagram triplicaram. O Pedro e a equipe são extremamente profissionais e antenados com as tendências. Recomendo de olhos fechados!'
+    texto: 'A Amplifica transformou completamente a presença digital da minha loja. Em apenas 3 meses, nossas vendas pelo Instagram triplicaram. O Pedro e a equipe são extremamente profissionais e antenados com as tendências. Recomendo de olhos fechados!',
+    tipo: 'audio',
+    media: '/depoimento-audio.ogg',
+    mediaType: 'audio/ogg'
+  },
+  {
+    nome: 'João Santos',
+    cargo: 'Proprietário, Restaurante Sabor & Arte',
+    foto: '/depoimento-cliente.jpeg',
+    texto: 'Depois que a Amplifica assumiu nossas redes sociais, o movimento do restaurante aumentou mais de 40%. O conteúdo que eles produzem é de altíssima qualidade e realmente conecta com nosso público. Pedro é um gênio do marketing digital!',
+    tipo: 'video',
+    media: '/depoimento-video.mp4',
+    mediaType: 'video/mp4'
   }
 ]
+
+const AudioIcon = () => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+    <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+    <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+  </svg>
+)
+
+const VideoIcon = () => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <polygon points="23 7 16 12 23 17 23 7"/>
+    <rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
+  </svg>
+)
 
 const Depoimentos = () => {
   return (
@@ -21,7 +57,7 @@ const Depoimentos = () => {
 
         <div className="depoimentos-grid">
           {depoimentos.map((depoimento, index) => (
-            <div key={index} className={`depoimento-card reveal delay-${index + 1}`}>
+            <div key={index} className={`depoimento-card reveal delay-${Math.min(index + 1, 2)}`}>
               <div className="depoimento-top">
                 <div className="depoimento-foto-wrapper">
                   <img
@@ -48,19 +84,22 @@ const Depoimentos = () => {
                 "{depoimento.texto}"
               </blockquote>
 
-              <div className="depoimento-audio">
-                <div className="audio-label">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
-                    <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
-                    <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
-                  </svg>
-                  <span>Ouça o depoimento</span>
+              <div className="depoimento-media">
+                <div className="media-label">
+                  {depoimento.tipo === 'audio' ? <AudioIcon /> : <VideoIcon />}
+                  <span>{depoimento.tipo === 'audio' ? 'Ouça o depoimento' : 'Assista ao depoimento'}</span>
                 </div>
-                <audio controls className="audio-player">
-                  <source src={depoimento.audio} type="audio/ogg" />
-                  Seu navegador não suporta o elemento de áudio.
-                </audio>
+                {depoimento.tipo === 'audio' ? (
+                  <audio controls className="media-player">
+                    <source src={depoimento.media} type={depoimento.mediaType} />
+                    Seu navegador não suporta o elemento de áudio.
+                  </audio>
+                ) : (
+                  <video controls className="media-player video-player" playsInline preload="metadata">
+                    <source src={depoimento.media} type={depoimento.mediaType} />
+                    Seu navegador não suporta o elemento de vídeo.
+                  </video>
+                )}
               </div>
 
               <div className="depoimento-cliente">
