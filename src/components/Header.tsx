@@ -76,7 +76,7 @@ const Header = () => {
     <header className="header">
       <div className="container">
         <a href="#" className="logo">
-          AMPLIFICA CONTEÚDO<span>.</span>
+          <img src="/logo-preto.png" alt="Amplifica Conteúdo" className="logo-img" />
         </a>
         
         {/* Navigation - Desktop */}

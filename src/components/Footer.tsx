@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="container">
         <div className="footer-grid">
           <div className="footer-brand">
-            <h3>AMPLIFICA CONTEÚDO<span>.</span></h3>
+            <img src="/logo-branco.png" alt="Amplifica Conteúdo" className="footer-logo" />
             <p>Transformando marcas invisíveis em referências de mercado.</p>
           </div>
           <div className="footer-links">
