@@ -405,10 +405,17 @@
   
   .hero-trust {
     gap: 1rem;
+    justify-content: center;
   }
   
   .trust-item {
     font-size: 0.8rem;
+    width: auto;
+    justify-content: center;
+  }
+  
+  .hero-scroll-indicator {
+    display: none;
   }
   
   .hero-stats {
