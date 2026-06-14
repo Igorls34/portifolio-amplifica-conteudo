@@ -23,7 +23,7 @@ const Problem = () => {
             </div>
             <div className="problem-stat">
               <h4>3x</h4>
-              <span>Mais Vendas com Conteúdo</span>
+              <span>Mais Resultados com Conteúdo</span>
             </div>
             <div className="problem-stat">
               <h4>90%</h4>

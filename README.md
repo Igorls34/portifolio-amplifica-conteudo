@@ -1,52 +1,75 @@
 # Amplifica Conteúdo - Portfólio
 
-![Status do Projeto](https://img.shields.io/badge/Status-Conclu%C3%ADdo-brightgreen)
+![Status do Projeto](https://img.shields.io/badge/Status-Est%C3%A1vel-brightgreen)
 ![Vite](https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E)
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 
-Landing Page de alta conversão desenvolvida para a marca **Amplifica Conteúdo**, liderada por Pedro Lucas. O projeto foca em uma estética moderna de agência, com animações fluidas, design responsivo e foco total em resultados de marketing digital.
+Landing Page institucional da **Amplifica Conteúdo**, agência de conteúdo digital liderada por Pedro Lucas. Design premium com animações fluidas, foco em autoridade de marca e experiência imersiva.
 
 ---
 
-## 📸 Preview do Projeto
+## 🚀 Tecnologias
 
-![Preview da Landing Page](./print-amplifica-conteudo.png)
+- **React 19 + TypeScript** — Componentes tipados e arquitetura modular
+- **Vite** — Build rápido e hot reload instantâneo
+- **CSS customizado** — Animações via Intersection Observer, sem dependências externas
+- **Netlify** — Deploy contínuo automático via Git
+- **Google Analytics + Microsoft Clarity** — Monitoramento de tráfego
+- **SEO Otimizado** — Open Graph, Twitter Cards, meta tags completas
 
 ---
 
-## 🚀 Tecnologias Utilizadas
+## 📋 Estrutura do Site
 
-- **React + TypeScript:** Estrutura robusta e tipagem segura.
-- **Vite:** Build ultra-rápido e performance otimizada.
-- **Vanilla CSS:** Estilização modular e animações personalizadas.
-- **Intersection Observer API:** Animações de entrada e revelação no scroll.
-- **Google Analytics & Microsoft Clarity:** Monitoramento de tráfego e comportamento do usuário.
-- **SEO Otimizado:** Meta tags configuradas para melhor ranqueamento e compartilhamento social.
+| Seção | Descrição |
+|-------|-----------|
+| **Hero** | Banner principal com CTA, stats e indicadores de confiança |
+| **Problema** | Diagnóstico da dor do cliente — falta de posicionamento digital |
+| **Solução** | Features expansíveis com detalhes sobre estratégia, conteúdo e resultados |
+| **Serviços** | 4 Pilares: Gestão de Conteúdo, Produção Vídeo/Foto, Estratégia Digital, Identidade Visual |
+| **Portfólio** | 17 projetos em layout Pinterest (masonry), com filtros por categoria |
+| **Diferenciais** | Vantagens competitivas da Amplifica |
+| **Depoimentos** | Cards com foto, áudio e avaliação dos clientes |
+| **Footer** | Contato, links sociais, Behance e créditos |
 
 ---
 
 ## 🛠️ Funcionalidades
 
-- [x] **Design Responsivo:** Adaptado para Mobile, Tablet e Desktop.
-- [x] **Light Mode:** Estética limpa em variações de azul e branco sólido.
-- [x] **Integração Social:** Links diretos para WhatsApp, Instagram e Behance.
-- [x] **Animações Fluidas:** Efeitos de fade-in, slide-up e scale-up conforme a navegação.
-- [x] **Build de Produção:** Deploy automatizado via Netlify.
+- [x] **Layout Pinterest** — Portfólio em colunas com altura variável
+- [x] **Features expansíveis** — Cards clicáveis que revelam detalhes
+- [x] **Áudio nos depoimentos** — Player nativo para ouvir os clientes
+- [x] **Animações premium** — Reveal com blur, fade e escala no scroll
+- [x] **Logo institucional** — Ícone + nome no header, footer e favicon
+- [x] **Design responsivo** — Mobile, tablet e desktop
+- [x] **Integração direta** — WhatsApp, Instagram, Behance
 
 ---
 
-## 🔗 Links Úteis
+## 📦 Comandos
 
-- **Site Ao Vivo:** [https://amplifica-conteudo.netlify.app](https://amplifica-conteudo.netlify.app)
-- **LinkedIn do Desenvolvedor:** [IgorDev Portfolio](https://igordev-portfolio-ofc.netlify.app/)
-
----
-
-## 👤 Desenvolvedor
-
-Este projeto foi desenvolvido por **IgorDev**. Sinta-se à vontade para entrar em contato através do meu [Portfólio](https://igordev-portfolio-ofc.netlify.app/).
+```bash
+npm install        # Instalar dependências
+npm run dev        # Desenvolvimento local (localhost:5173)
+npm run build      # Build de produção (dist/)
+npm run lint       # Verificar código
+```
 
 ---
 
-© 2026 Amplifica Conteúdo. Todos os direitos reservados.
+## 🔗 Links
+
+- **Site ao vivo:** [amplifica-conteudo.netlify.app](https://amplifica-conteudo.netlify.app)
+- **GitHub:** [Igorls34/portifolio-amplifica-conteudo](https://github.com/Igorls34/portifolio-amplifica-conteudo)
+- **Dev:** [IgorDev Portfolio](https://igordev-portfolio-ofc.netlify.app/)
+
+---
+
+## ⚠️ Status
+
+✅ Versão estável — **Aguardando revisão final do Pedro** para aprovação de conteúdo e ajustes finos.
+
+---
+
+© 2026 Amplifica Conteúdo. Desenvolvido por IgorDev.
