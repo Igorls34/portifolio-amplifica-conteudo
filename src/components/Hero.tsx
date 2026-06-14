@@ -29,7 +29,7 @@ const Hero = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Quero Amplificar Meu Negócio
+                Vamos lá
               </a>
               <a href="#portfolio" className="hero-btn-outline">
                 Ver Portfólio
@@ -74,6 +74,10 @@ const Hero = () => {
               <div className="hero-stat">
                 <h4>+40%</h4>
                 <span>Aumento em Autoridade</span>
+              </div>
+              <div className="hero-stat">
+                <h4>+15</h4>
+                <span>Estratégias Ativas</span>
               </div>
               <div className="hero-stat">
                 <h4>24/7</h4>

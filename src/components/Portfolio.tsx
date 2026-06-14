@@ -26,13 +26,6 @@ const portfolioItems: PortfolioItem[] = [
     category: 'Motion Design'
   },
   {
-    id: 'v3',
-    video: '/portfolio-video-3.mp4',
-    image: 'thumb-video-3',
-    title: 'Edição de Vídeo Profissional',
-    category: 'Motion Design'
-  },
-  {
     id: '1',
     image: 'imagem-1.jpeg',
     title: 'Projeto Marca Premium',

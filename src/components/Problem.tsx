@@ -14,7 +14,7 @@ const Problem = () => {
             </p>
           </div>
           <div className="problem-highlight reveal delay-2">
-            Se o seu conteúdo não vende, ele é apenas um enfeite caro no seu perfil.
+            Se o seu conteúdo não converte, ele é apenas um enfeite caro no seu perfil.
           </div>
           <div className="problem-stats reveal delay-3">
             <div className="problem-stat">
