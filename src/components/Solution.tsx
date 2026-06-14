@@ -23,9 +23,7 @@ const Solution = () => {
             <div className="solution-feature clickable" onClick={() => setShowEstrategia(!showEstrategia)}>
               <div className="solution-feature-icon">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <circle cx="12" cy="12" r="6"></circle>
-                  <circle cx="12" cy="12" r="2"></circle>
+                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
                 </svg>
               </div>
               <span>Estratégia Personalizada</span>
@@ -43,7 +41,11 @@ const Solution = () => {
             <div className="solution-feature">
               <div className="solution-feature-icon">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                  <polyline points="16 3 21 3 21 8"></polyline>
+                  <line x1="4" y1="20" x2="21" y2="3"></line>
+                  <polyline points="21 16 21 21 16 21"></polyline>
+                  <line x1="15" y1="15" x2="21" y2="21"></line>
+                  <line x1="4" y1="4" x2="9" y2="9"></line>
                 </svg>
               </div>
               <span>Conteúdo de Alto Nível</span>
@@ -51,8 +53,7 @@ const Solution = () => {
             <div className="solution-feature">
               <div className="solution-feature-icon">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
-                  <polyline points="17 6 23 6 23 12"></polyline>
+                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
                 </svg>
               </div>
               <span>Resultados Mensuráveis</span>
