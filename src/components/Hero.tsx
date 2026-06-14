@@ -19,7 +19,7 @@ const Hero = () => {
               A gente tem o <span className="neon-text">megafone.</span>
             </h1>
             <p className="reveal delay-1">
-              Transformamos conteúdo simples em máquina de vendas. Posicionamento estratégico para quem cansou de postar sem resultado.
+              Transformamos conteúdo simples em referência no mercado. Posicionamento estratégico para quem cansou de postar sem resultado.
             </p>
 
             <div className="hero-actions reveal delay-2">
@@ -73,7 +73,7 @@ const Hero = () => {
             <div className="hero-stats reveal delay-4">
               <div className="hero-stat">
                 <h4>+40%</h4>
-                <span>Aumento em Vendas</span>
+                <span>Aumento em Autoridade</span>
               </div>
               <div className="hero-stat">
                 <h4>24/7</h4>
