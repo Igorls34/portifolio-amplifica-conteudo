@@ -4,12 +4,34 @@ import { imageMap } from '../imagens/imagesMap'
 
 interface PortfolioItem {
   id: string
-  image: string
+  image?: string
+  video?: string
   title: string
   category: string
 }
 
 const portfolioItems: PortfolioItem[] = [
+  {
+    id: 'v1',
+    video: '/portfolio-video.mp4',
+    image: 'thumb-video-1',
+    title: 'Projeto Audiovisual Premium',
+    category: 'Motion Design'
+  },
+  {
+    id: 'v2',
+    video: '/portfolio-video-2.mp4',
+    image: 'thumb-video-2',
+    title: 'Produção de Conteúdo',
+    category: 'Motion Design'
+  },
+  {
+    id: 'v3',
+    video: '/portfolio-video-3.mp4',
+    image: 'thumb-video-3',
+    title: 'Edição de Vídeo Profissional',
+    category: 'Motion Design'
+  },
   {
     id: '1',
     image: 'imagem-1.jpeg',
@@ -17,22 +39,10 @@ const portfolioItems: PortfolioItem[] = [
     category: 'Identidade Visual'
   },
   {
-    id: '2',
-    image: 'imagem-2.jpeg',
-    title: 'Campanha Digital',
-    category: 'Marketing Digital'
-  },
-  {
     id: '3',
     image: 'imagem-3.jpeg',
     title: 'Conteúdo Social Media',
     category: 'Redes Sociais'
-  },
-  {
-    id: '4',
-    image: 'WhatsApp Image 2026-04-03 at 14.28.45.jpeg',
-    title: 'Fotografia Comercial',
-    category: 'Fotografia'
   },
   {
     id: '5',
@@ -45,12 +55,6 @@ const portfolioItems: PortfolioItem[] = [
     image: 'WhatsApp Image 2026-04-03 at 14.30.102.jpeg',
     title: 'Branding Completo',
     category: 'Identidade Visual'
-  },
-  {
-    id: '7',
-    image: 'WhatsApp Image 2026-04-03 at 14.30.11.jpeg',
-    title: 'Produção de Vídeo',
-    category: 'Vídeo'
   },
   {
     id: '8',
@@ -69,12 +73,6 @@ const portfolioItems: PortfolioItem[] = [
     image: 'WhatsApp Image 2026-04-03 at 14.30.120.jpeg',
     title: 'Estratégia de Conteúdo',
     category: 'Estratégia'
-  },
-  {
-    id: '11',
-    image: 'WhatsApp Image 2026-04-03 at 14.30.181.jpeg',
-    title: 'Fotografia de Eventos',
-    category: 'Fotografia'
   },
   {
     id: '12',
@@ -119,18 +117,6 @@ const portfolioItems: PortfolioItem[] = [
     category: 'Design'
   },
   {
-    id: '19',
-    image: 'WhatsApp Image 2026-04-03 at 14.33.623.jpeg',
-    title: 'Fotografia Produto',
-    category: 'Fotografia'
-  },
-  {
-    id: '20',
-    image: 'WhatsApp Image 2026-04-03 at 14.337.23.jpeg',
-    title: 'Gestão de Redes',
-    category: 'Marketing Digital'
-  },
-  {
     id: '21',
     image: 'WhatsApp Image 2026-04-03 at 14.40.170.jpeg',
     title: 'Consultoria de Marca',
@@ -142,7 +128,7 @@ const categories = ['Todos', ...Array.from(new Set(portfolioItems.map(item => it
 
 const Portfolio = () => {
   const [selectedCategory, setSelectedCategory] = useState('Todos')
-  const [selectedImage, setSelectedImage] = useState<PortfolioItem | null>(null)
+  const [selectedItem, setSelectedItem] = useState<PortfolioItem | null>(null)
   const [showAll, setShowAll] = useState(false)
 
   useEffect(() => {
@@ -155,6 +141,18 @@ const Portfolio = () => {
 
   const displayedItems = showAll ? filteredItems : filteredItems.slice(0, 6)
   const hasMore = filteredItems.length > 6
+
+  const getImageUrl = (item: PortfolioItem) => {
+    if (item.image) {
+      if (item.image.startsWith('thumb-')) return `/${item.image}.jpg`
+      return imageMap[item.image]
+    }
+    return undefined
+  }
+
+  const canOpen = (item: PortfolioItem) => {
+    return !!(item.video || getImageUrl(item))
+  }
 
   return (
     <section id="portfolio" className="portfolio">
@@ -178,12 +176,13 @@ const Portfolio = () => {
 
         <div className="portfolio-grid">
           {displayedItems.map((item, index) => {
-            const imageUrl = imageMap[item.image]
+            const imageUrl = getImageUrl(item)
+            const isVideoItem = !!item.video
             return (
               <div 
                 key={item.id}
-                className={`portfolio-item reveal delay-${Math.min(index % 4 + 1, 4)} ${!imageUrl ? 'image-missing' : ''}`}
-                onClick={() => imageUrl && setSelectedImage(item)}
+                className={`portfolio-item delay-${Math.min(index % 4 + 1, 4)} ${!canOpen(item) ? 'image-missing' : ''}`}
+                onClick={() => canOpen(item) && setSelectedItem(item)}
               >
                 <div className="portfolio-image-wrapper">
                   {imageUrl ? (
@@ -192,12 +191,37 @@ const Portfolio = () => {
                         src={imageUrl} 
                         alt={item.title}
                         className="portfolio-image"
+                        loading="lazy"
                       />
                       <div className="portfolio-overlay">
                         <div className="portfolio-content">
                           <h3>{item.title}</h3>
                           <p className="portfolio-category">{item.category}</p>
-
+                          {isVideoItem ? (
+                            <div className="play-icon-sm">
+                              <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                                <polygon points="5 3 19 12 5 21 5 3"/>
+                              </svg>
+                            </div>
+                          ) : (
+                            <button className="view-btn">Ver Projeto</button>
+                          )}
+                        </div>
+                      </div>
+                    </>
+                  ) : isVideoItem ? (
+                    <>
+                      <div className="portfolio-video-thumb">
+                        <div className="play-icon">
+                          <svg width="48" height="48" viewBox="0 0 24 24" fill="white">
+                            <polygon points="5 3 19 12 5 21 5 3"/>
+                          </svg>
+                        </div>
+                      </div>
+                      <div className="portfolio-overlay">
+                        <div className="portfolio-content">
+                          <h3>{item.title}</h3>
+                          <p className="portfolio-category">{item.category}</p>
                           <button className="view-btn">Ver Projeto</button>
                         </div>
                       </div>
@@ -250,19 +274,26 @@ const Portfolio = () => {
         </div>
       </div>
 
-      {selectedImage && imageMap[selectedImage.image] && (
-        <div className="portfolio-modal" onClick={() => setSelectedImage(null)}>
+      {selectedItem && (
+        <div className="portfolio-modal" onClick={() => setSelectedItem(null)}>
           <div className="portfolio-modal-content" onClick={(e) => e.stopPropagation()}>
-            <button className="modal-close" onClick={() => setSelectedImage(null)} aria-label="Fechar modal">
+            <button className="modal-close" onClick={() => setSelectedItem(null)} aria-label="Fechar modal">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <line x1="18" y1="6" x2="6" y2="18"></line>
                 <line x1="6" y1="6" x2="18" y2="18"></line>
               </svg>
             </button>
-            <img src={imageMap[selectedImage.image]} alt={selectedImage.title} />
+            {selectedItem.video ? (
+              <video controls className="modal-video" playsInline>
+                <source src={selectedItem.video} type="video/mp4" />
+                Seu navegador não suporta o elemento de vídeo.
+              </video>
+            ) : selectedItem.image && imageMap[selectedItem.image] ? (
+              <img src={imageMap[selectedItem.image]} alt={selectedItem.title} loading="lazy" />
+            ) : null}
             <div className="modal-info">
-              <h3>{selectedImage.title}</h3>
-              <p className="modal-category">{selectedImage.category}</p>
+              <h3>{selectedItem.title}</h3>
+              <p className="modal-category">{selectedItem.category}</p>
             </div>
           </div>
         </div>
@@ -272,4 +303,3 @@ const Portfolio = () => {
 }
 
 export default Portfolio
-
