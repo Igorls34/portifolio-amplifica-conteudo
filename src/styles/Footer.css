@@ -17,7 +17,15 @@
 .footer-logo {
   height: 42px;
   width: auto;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.footer-brand h3 {
+  font-size: 1.1rem;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+  color: white;
+  margin: 0 0 0.75rem 0;
 }
 
 .footer-brand p {

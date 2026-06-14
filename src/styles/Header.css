@@ -24,11 +24,20 @@
   text-decoration: none;
   display: flex;
   align-items: center;
+  gap: 0.6rem;
 }
 
 .logo-img {
   height: 36px;
   width: auto;
+}
+
+.logo-text {
+  font-size: 1rem;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+  color: var(--text-primary);
+  white-space: nowrap;
 }
 
 .nav-links {
@@ -276,6 +285,10 @@
   .logo-img {
     height: 30px;
   }
+  
+  .logo-text {
+    font-size: 0.9rem;
+  }
 }
 
 @media (max-width: 768px) {
@@ -299,6 +312,10 @@
     height: 32px;
   }
   
+  .logo-text {
+    font-size: 0.85rem;
+  }
+  
   .header-cta {
     display: none;
   }
@@ -315,6 +332,10 @@
   
   .logo-img {
     height: 28px;
+  }
+  
+  .logo-text {
+    display: none;
   }
   
   .mobile-menu-btn {
