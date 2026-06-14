@@ -23,6 +23,7 @@ const depoimentos: DepoimentoItem[] = [
   {
     nome: 'Henrique Faria',
     cargo: 'Segurança Privada',
+    foto: '/depoimento-henrique.jpeg',
     texto: 'Foi a primeira pessoa que contratei para cuidar das mídias do Instagram e curti demais a experiência. Uma cabeça pensa bem, mas duas pensam muito melhor. Gostei das montagens, dos vídeos com áudio e principalmente da logo que criou pros meus vídeos — deu identidade única ao conteúdo. Experiência excelente, valeu muito a pena!',
     tipo: 'audio',
     media: '/depoimento-video.mp4',
