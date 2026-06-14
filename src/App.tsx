@@ -25,7 +25,7 @@ function App() {
       })
     }, observerOptions)
 
-    const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-scale')
+    const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-scale, .reveal-premium')
     revealElements.forEach(el => {
       observer.observe(el)
     })
