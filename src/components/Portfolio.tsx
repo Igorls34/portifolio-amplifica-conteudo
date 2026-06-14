@@ -45,82 +45,16 @@ const portfolioItems: PortfolioItem[] = [
     category: 'Redes Sociais'
   },
   {
-    id: '5',
-    image: 'WhatsApp Image 2026-04-03 at 14.30.10.jpeg',
-    title: 'Design Editorial',
-    category: 'Design'
-  },
-  {
     id: '6',
     image: 'WhatsApp Image 2026-04-03 at 14.30.102.jpeg',
     title: 'Branding Completo',
     category: 'Identidade Visual'
   },
   {
-    id: '8',
-    image: 'WhatsApp Image 2026-04-03 at 14.30.116.jpeg',
-    title: 'Layout Digital',
-    category: 'Design Digital'
-  },
-  {
-    id: '9',
-    image: 'WhatsApp Image 2026-04-03 at 14.30.120.4jpeg.jpeg',
-    title: 'Embalagem Premium',
-    category: 'Design de Produto'
-  },
-  {
-    id: '10',
-    image: 'WhatsApp Image 2026-04-03 at 14.30.120.jpeg',
-    title: 'Estratégia de Conteúdo',
-    category: 'Estratégia'
-  },
-  {
-    id: '12',
-    image: 'WhatsApp Image 2026-04-03 at 14.30.191.jpeg',
-    title: 'Criativo para Publicidade',
-    category: 'Publicidade'
-  },
-  {
-    id: '13',
-    image: 'WhatsApp Image 2026-04-03 at 14.30.210.jpeg',
-    title: 'Catálogo Digital',
-    category: 'Design'
-  },
-  {
-    id: '14',
-    image: 'WhatsApp Image 2026-04-03 at 14.301.10.jpeg',
-    title: 'Motion Graphics',
-    category: 'Motion Design'
-  },
-  {
     id: '15',
     image: 'WhatsApp Image 2026-04-03 at 14.306.10.jpeg',
     title: 'Instagram Reels',
     category: 'Redes Sociais'
-  },
-  {
-    id: '16',
-    image: 'WhatsApp Image 2026-04-03 at 14.33.230.jpeg',
-    title: 'Ilustração Digital',
-    category: 'Arte Digital'
-  },
-  {
-    id: '17',
-    image: 'WhatsApp Image 2026-04-03 at 14.33.233.jpeg',
-    title: 'Webdesign Responsivo',
-    category: 'Design Digital'
-  },
-  {
-    id: '18',
-    image: 'WhatsApp Image 2026-04-03 at 14.33.239.jpeg',
-    title: 'Apresentação Corporativa',
-    category: 'Design'
-  },
-  {
-    id: '21',
-    image: 'WhatsApp Image 2026-04-03 at 14.40.170.jpeg',
-    title: 'Consultoria de Marca',
-    category: 'Estratégia'
   }
 ]
 

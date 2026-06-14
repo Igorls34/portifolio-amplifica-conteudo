@@ -75,10 +75,6 @@ const Hero = () => {
                 <h4>+40%</h4>
                 <span>Aumento em Vendas</span>
               </div>
-              <div>
-                <h4>+20</h4>
-                <span>Clientes Ativos</span>
-              </div>
               <div className="hero-stat">
                 <h4>24/7</h4>
                 <span>Suporte Dedicado</span>
